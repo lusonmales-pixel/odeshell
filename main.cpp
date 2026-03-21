@@ -9,10 +9,10 @@ namespace fs = std::filesystem;
 void ls() {
   for (const auto &entry : fs::directory_iterator(fs::current_path())) {
     if (entry.is_directory()){
-      cout << "[DIR]" << entry.path().filename().string();
+      cout << "[DIR]" << entry.path().filename().string() << endl;
     }
     else {
-      cout << "[FILE]" << entry.path().filename().string();
+      cout << "[FILE]" << entry.path().filename().string() << endl;
     }
   }
 }
