@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -42,6 +43,10 @@ void echo() {
   cout << "You said, " << msg << " (*^.^*)" << endl;
 }
 
+void clear() { system("clear"); }
+
+void pwd() { cout << "Current path: " << fs::current_path() << endl; }
+
 void touch(const string &name) { ofstream file(name); }
 
 void mkdir(const string &name) { fs::create_directory(name); }
@@ -51,9 +56,13 @@ void help() {
           "- list of all files and directories \n2.cd - change directory "
           "\n3.rm - remove file/directory \n4.mkdir - create direcory \n5.echo "
           "- echos your text \n6.exit - end session \n7.rmdir - remove not "
-          "empty directory \n8.touch - create file"
+          "empty directory \n8.touch - create file \n9.clear - clear terminal "
+          "\10.pwd - print current path \11.run - run system commands(Example: "
+          "run nano test.txt - open nano with file)"
        << endl;
 }
+
+void run(const char *command) { system(command); }
 
 int main() {
   while (true) {
@@ -120,6 +129,21 @@ int main() {
     // HELP
     else if (user_text == "help") {
       help();
+    }
+
+    // PWD
+    else if (user_text == "pwd") {
+      pwd();
+    }
+
+    // CLEAR
+    else if (user_text == "clear") {
+      clear();
+    }
+
+    else if (user_text.rfind("run ", 0) == 0) {
+      string command = user_text.substr(4);
+      run(command.c_str());
     }
 
     // FINAL ERROR HANDLER
