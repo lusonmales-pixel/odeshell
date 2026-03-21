@@ -8,7 +8,12 @@ namespace fs = std::filesystem;
 
 void ls() {
   for (const auto &entry : fs::directory_iterator(fs::current_path())) {
-    cout << entry.path().filename().string() << endl;
+    if (entry.is_directory()){
+      cout << "[DIR]" << entry.path().filename().string();
+    }
+    else {
+      cout << "[FILE]" << entry.path().filename().string();
+    }
   }
 }
 
@@ -67,7 +72,7 @@ void run(const char *command) { system(command); }
 int main() {
   while (true) {
     string user_text;
-    cout << "odeshell >>" << fs::current_path().string() << " >> ";
+    cout << "odeshell [" << fs::current_path().string() << "] >> ";
     getline(cin, user_text);
 
     // END SESSION
@@ -141,6 +146,7 @@ int main() {
       clear();
     }
 
+    // RUN
     else if (user_text.rfind("run ", 0) == 0) {
       string command = user_text.substr(4);
       run(command.c_str());
