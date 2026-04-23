@@ -1,68 +1,82 @@
-# odeshell 🚀
+#ODEShell
 
-This repository contains the `odeshell` project, a C++ application.
+Минималистичный, быстрый и расширяемый shell с упором на простоту и контроль.
 
-## Badges 🛡️
 
-[![Build Status](https://img.shields.io/travis/lusonmales-pixel/odeshell.svg?style=flat-square)](https://travis-ci.org/lusonmales-pixel/odeshell)
-[![License](https://img.shields.io/github/license/lusonmales-pixel/odeshell.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+#Что это?
 
-## Features ✨
+ODEShell — это кастомная оболочка командной строки, написанная с идеей “меньше магии — больше контроля”.
 
-*   (No specific features were provided in the repository description. This section can be updated once features are defined.)
+Без перегруженности, без лишних абстракций. Только то, что действительно нужно.
 
-## Installation 🛠️
 
-To get a local copy up and running, follow these simple steps.
+#Особенности
 
-### Prerequisites
+Чистая и понятная архитектура
 
-Ensure you have a C++ compiler installed (e.g., g++, Clang).
+Быстрый запуск и низкое потребление ресурсов
 
-### Cloning the Repository
+Простая расширяемость
 
-```bash
-git clone https://github.com/lusonmales-pixel/odeshell.git
-cd odeshell
-```
+Контроль над поведением shell
 
-### Building the Project
+Минимализм без потери функциональности
 
-This project uses a standard build process. Navigate to the project directory and build.
 
-```bash
-# Example using make (if a Makefile is present)
-make
+#Использование
 
-# Example using CMake (if CMakeLists.txt is present)
-mkdir build
-cd build
-cmake ..
-make
-```
+После запуска ты получаешь интерактивную оболочку.
 
-## Usage 💡
+Пример:
 
-(Instructions on how to run the application will be provided here once the project's functionality is defined.)
+odeshell> echo hello
+hello
 
-## Contributing 🤝
+(сюда можно добавить реальные команды, если они уже реализованы)
 
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+#Архитектура
 
-## License 📜
+Проект старается придерживаться простой структуры:
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+core — базовая логика shell
 
----
+parser — разбор команд
 
-<p align="center">
-  <a href="https://readmeforge.app?utm_source=badge">
-    <img src="https://readmeforge.app/badge.svg" alt="Made with ReadmeForge" height="20">
-  </a>
-</p>
+executor — выполнение
+
+utils — вспомогательные вещи
+
+
+Если структура отличается — лучше подправить под фактическую.
+
+
+#Почему вообще этот проект?
+
+Потому что писать свой shell — это один из лучших способов реально понять:
+
+как работает CLI
+
+как ОС исполняет процессы
+
+как устроен парсинг
+
+где заканчивается “магия” и начинается система
+
+
+#Контрибьют
+
+Если хочешь помочь:
+
+1. Форкни репозиторий
+
+
+2. Сделай изменения
+
+
+3. Открой pull request
+
+
+
+Любые улучшения приветствуются — от фиксов до новых фич.
+
